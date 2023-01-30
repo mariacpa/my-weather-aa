@@ -1,0 +1,90 @@
+body {
+  background: #fcfefe;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #66bfbf;
+  font-size: 80px;
+  text-align: right;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 70px;
+  text-align: LEFT;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  text-align: right;
+  font-size: 18px;
+}
+
+h5 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 30px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  color: #66bfbf;
+}
+
+li {
+  font-family: "Montserrat", sans-serif;
+  list-style-type: none;
+  text-align: left;
+  font-size: 14px;
+}
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+}
+
+header {
+  margin: 10px 35px;
+  text-align: center;
+}
+
+.navbar-brand {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.pagina {
+  background: #eaf6f6;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.icon-day {
+  font-size: 50px;
+  padding: 20px;
+  color: #fdb44b;
+}
+
+.icon-today {
+  font-size: 120px;
+  color: #fdb44b;
+  text-align: left;
+}
+
+.container {
+  width: 80%;
+}
+
+.temperature-info {
+  margin-left: 20px;
+}
+
+.bold-symbols {
+  font-weight: bolder;
+}
+
+.weather-description {
+  text-transform: capitalize;
+  text-align: right;
+}
