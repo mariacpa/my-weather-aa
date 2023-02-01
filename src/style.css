@@ -6,10 +6,10 @@ h1 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #66bfbf;
   font-size: 80px;
-  text-align: right;
+  text-align: left;
 }
 
-h2 {
+.tempvalue {
   font-family: "Montserrat", sans-serif;
   font-size: 70px;
   text-align: LEFT;
@@ -17,7 +17,7 @@ h2 {
 
 h3 {
   font-family: "Montserrat", sans-serif;
-  text-align: right;
+  text-align: left;
   font-size: 18px;
 }
 
@@ -31,10 +31,14 @@ p {
   color: #66bfbf;
 }
 
+ul {
+  padding: 20px;
+}
+
 li {
   font-family: "Montserrat", sans-serif;
   list-style-type: none;
-  text-align: left;
+  text-align: right;
   font-size: 14px;
 }
 
@@ -43,11 +47,13 @@ header {
   text-align: center;
 }
 
-.temp-unit {
+.temp-unit a {
   font-size: 15px;
   text-decoration: none;
   font-weight: normal;
   color: black;
+  position: relative;
+  top: -36px;
 }
 .navbar-brand {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -66,8 +72,9 @@ header {
 }
 
 .icon-today {
-  font-size: 120px;
+  font-size: 70px;
   color: #fdb44b;
+  padding: 20px;
   text-align: left;
 }
 
@@ -76,8 +83,12 @@ header {
 }
 
 .temperature-info {
-  margin-left: 20px;
   font-size: 20px;
+}
+
+.extra-info span {
+  text-align: left;
+  margin: none;
 }
 
 .bold-symbols {

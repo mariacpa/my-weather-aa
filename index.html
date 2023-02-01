@@ -60,36 +60,44 @@
       <div class="pagina">
         <header>
           <div class="row">
-            <div class="col-2">
-              <div id="icon-today">
-                <i class="fa-solid icon-today fa-cloud"></i>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="temperature-info">
-                <h2>
-                  <span id="tempvalue"></span>
-                  <span class="temp-unit">
-                    <a href="#" id="celsius">°C</a>
-                    <a href="#" id="farenheit">°F</a></span
-                  >
-                </h2>
-                <ul class="extra-info">
-                  <li class="text-body-secondary" id="temp-min-max"></li>
-                  <li class="text-body-secondary" id="humidity"></li>
-                  <li class="text-body-secondary" id="wind"></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-7 now">
+            <div class="col now">
               <div id="city">
                 <h1></h1>
               </div>
               <h3 id="day-time-now"></h3>
-              <p
-                class="text-body-secondary weather-description"
-                id="weather-description"
-              ></p>
+            </div>
+            <div class="col">
+              <div class="d-flex weather-info">
+                <div id="icon-today">
+                  <i class="fa-solid icon-today fa-cloud"></i>
+                </div>
+                <div class="extra-info">
+                  <span id="tempvalue" class="tempvalue"></span>
+                  <span class="temp-unit">
+                    <a href="#" id="celsius">°C |</a>
+                    <a href="#" id="farenheit">°F</a></span
+                  >
+                  <div class="text-body-secondary" id="temp-min-max"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="temperature-info">
+                <ul>
+                  <li class="text-body-secondary weather-description">
+                    <span id="weather-description"></span>
+                  </li>
+                  <li class="text-body-secondary">
+                    <span id="temp-min-max"></span>
+                  </li>
+                  <li class="text-body-secondary">
+                    <span id="humidity"></span>
+                  </li>
+                  <li class="text-body-secondary">
+                    <span id="wind"></span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </header>
@@ -149,7 +157,7 @@
       </div>
       <footer>
         <small>
-          <a href="https://github.com/mariacpa/my-weather-aa"
+          <a href="https://github.com/mariacpa/my-weather-aa" target="_blank"
             >Open-source-code</a
           >
           by Maria Padilla</small
