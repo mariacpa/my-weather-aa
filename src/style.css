@@ -38,18 +38,17 @@ li {
   font-size: 14px;
 }
 
-a {
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: normal;
-  color: black;
-}
-
 header {
   margin: 10px 35px;
   text-align: center;
 }
 
+.temp-unit {
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+}
 .navbar-brand {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -78,6 +77,7 @@ header {
 
 .temperature-info {
   margin-left: 20px;
+  font-size: 20px;
 }
 
 .bold-symbols {
