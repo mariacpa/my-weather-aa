@@ -5,7 +5,7 @@ body {
 h1 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #66bfbf;
-  font-size: 80px;
+  font-size: 70px;
   text-align: left;
 }
 
@@ -55,6 +55,7 @@ header {
   position: relative;
   top: -36px;
 }
+
 .navbar-brand {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -86,9 +87,8 @@ header {
   font-size: 20px;
 }
 
-.extra-info span {
+.min-max .temperature {
   text-align: left;
-  margin: none;
 }
 
 .bold-symbols {
