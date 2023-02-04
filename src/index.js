@@ -46,6 +46,7 @@ function displayCity(event) {
 function showTemperature(response) {
   let tempvalue = document.querySelector("#tempvalue");
   console.log(response);
+  ctemp = response.data.temperature.current;
   tempvalue.innerHTML = Math.round(response.data.temperature.current);
   let temFeelsLike = document.querySelector("#tempFeelslike");
   temFeelsLike.innerHTML = `Feels like: ${Math.round(
@@ -98,30 +99,23 @@ function getCurrentPosition() {
 let button = document.querySelector("#currentCity-button");
 button.addEventListener("click", getCurrentPosition);
 
-/*function convertToFarenheit(event) {
+function convertToFarenheit(event) {
   event.preventDefault();
-  let tempValue = document.querySelector("#tempvalue");
-  let ctemp = Math.round(tempValue * (9 / 5) + 32);
-  tempValue.innerHTML = ctemp;
-  let farenheitSymbol = document.querySelector("#farenheit");
+  let ftempValue = document.querySelector("#tempvalue");
   farenheitSymbol.classList.add("bold-symbols");
-  let celsiusSymbol = document.querySelector("#celsius");
   celsiusSymbol.classList.remove("bold-symbols");
+  ftempValue.innerHTML = Math.round(ctemp * (9 / 5) + 32);
 }
-
-let farenheit = document.querySelector("#farenheit");
-farenheit.addEventListener("click", convertToFarenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let tempValue = document.querySelector("#tempvalue");
-  let fTemp = Math.round((tempValue - 32) * 5) / 9;
-  tempValue.innerHTML = fTemp;
-  let celsiusSymbol = document.querySelector("#celsius");
+  let ctempValue = document.querySelector("#tempvalue");
   celsiusSymbol.classList.add("bold-symbols");
-  let farenheitSymbol = document.querySelector("#farenheit");
   farenheitSymbol.classList.remove("bold-symbols");
+  ctempValue.innerHTML = Math.round(ctemp);
 }
 
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", convertToCelsius);*/
+let celsiusSymbol = document.querySelector("#celsius");
+let farenheitSymbol = document.querySelector("#farenheit");
+celsius.addEventListener("click", convertToCelsius);
+farenheit.addEventListener("click", convertToFarenheit);
