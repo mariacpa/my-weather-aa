@@ -99,3 +99,7 @@ header {
   text-align: right;
   font-weight: bolder;
 }
+
+.city {
+  text-transform: capitalize;
+}

@@ -62,6 +62,8 @@ function showTemperature(response) {
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  celsiusSymbol.classList.add("bold-symbols");
+  farenheitSymbol.classList.remove("bold-symbols");
 }
 
 function showCurrentCity(response) {
