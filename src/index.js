@@ -66,7 +66,7 @@ function showTemperature(response) {
 
 function showCurrentCity(response) {
   let h1 = document.querySelector("h1");
-  let inputCity = response.data[0].name;
+  let inputCity = response.data.city;
   h1.innerHTML = inputCity;
 }
 function showPositionCity(position) {
@@ -74,7 +74,7 @@ function showPositionCity(position) {
   let lon = position.coords.longitude;
   let keyApi = "34a7d5053503ta79c57d5oafb4d7bb21";
   let units = "metric";
-  let apiUrlCity = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${keyApi}&units=${units}`;
+  let apiUrlCity = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${keyApi}&units=${units}`;
   axios.get(apiUrlCity).then(showCurrentCity);
 }
 
@@ -85,7 +85,8 @@ function showPositionTemp(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let keyApi = "34a7d5053503ta79c57d5oafb4d7bb21";
-  let apiUrlTemp = `https://api.shecodes.io/weather/v1/current?lon=${lon}&latn=${lat}&&key=${keyApi}&units=metric`;
+  let units = "metric";
+  let apiUrlTemp = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${keyApi}&units=${units}`;
   axios.get(apiUrlTemp).then(showTemperature);
 }
 
