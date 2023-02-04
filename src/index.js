@@ -118,3 +118,5 @@ let celsiusSymbol = document.querySelector("#celsius");
 let farenheitSymbol = document.querySelector("#farenheit");
 celsius.addEventListener("click", convertToCelsius);
 farenheit.addEventListener("click", convertToFarenheit);
+
+let ctemp = null;
