@@ -72,7 +72,7 @@ function showCurrentCity(response) {
 function showPositionCity(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let keyApi = "dff5c692192605ee5ed7f95b423ae857";
+  let keyApi = "34a7d5053503ta79c57d5oafb4d7bb21";
   let units = "metric";
   let apiUrlCity = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${keyApi}&units=${units}`;
   axios.get(apiUrlCity).then(showCurrentCity);
