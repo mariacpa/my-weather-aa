@@ -26,7 +26,7 @@ function getDateTime() {
   if (minutes < 10) {
     timeNow = `${hour}:0${minutes}`;
   }
-  let dateTime = `${day} ${month} ${year} (${dayName}) ${timeNow}`;
+  let dateTime = `Last updated: ${day} ${month} ${year} ${timeNow}`;
   date.innerHTML = dateTime;
 }
 
