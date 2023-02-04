@@ -45,6 +45,7 @@ function displayCity(event) {
 
 function showTemperature(response) {
   let tempvalue = document.querySelector("#tempvalue");
+  console.log(response);
   tempvalue.innerHTML = Math.round(response.data.temperature.current);
   let temFeelsLike = document.querySelector("#tempFeelslike");
   temFeelsLike.innerHTML = `Feels like: ${Math.round(
@@ -59,7 +60,7 @@ function showTemperature(response) {
   let iconToday = document.querySelector("#icon-today");
   iconToday.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 }
 
