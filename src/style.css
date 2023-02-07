@@ -53,9 +53,8 @@ header {
   text-align: center;
 }
 
-.temp-unit a {
+.temp-unit {
   font-size: 15px;
-  text-decoration: none;
   color: black;
   position: relative;
   top: -36px;

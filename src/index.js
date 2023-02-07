@@ -100,7 +100,7 @@ function showTemperature(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = response.data.condition.description;
   let iconToday = document.querySelector("#icon-today");
@@ -108,8 +108,6 @@ function showTemperature(response) {
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  celsiusSymbol.classList.add("bold-symbols");
-  farenheitSymbol.classList.remove("bold-symbols");
   getDateTime();
   getForecast(response.data.coordinates);
 }
@@ -147,26 +145,5 @@ function getCurrentPosition() {
 
 let button = document.querySelector("#currentCity-button");
 button.addEventListener("click", getCurrentPosition);
-
-function convertToFarenheit(event) {
-  event.preventDefault();
-  let ftempValue = document.querySelector("#tempvalue");
-  farenheitSymbol.classList.add("bold-symbols");
-  celsiusSymbol.classList.remove("bold-symbols");
-  ftempValue.innerHTML = Math.round(ctemp * (9 / 5) + 32);
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let ctempValue = document.querySelector("#tempvalue");
-  celsiusSymbol.classList.add("bold-symbols");
-  farenheitSymbol.classList.remove("bold-symbols");
-  ctempValue.innerHTML = Math.round(ctemp);
-}
-
-let celsiusSymbol = document.querySelector("#celsius");
-let farenheitSymbol = document.querySelector("#farenheit");
-celsius.addEventListener("click", convertToCelsius);
-farenheit.addEventListener("click", convertToFarenheit);
 
 let ctemp = null;
