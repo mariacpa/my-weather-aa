@@ -44,8 +44,49 @@ function displayCity(event) {
 function getForecast(response) {
   let keyApi = "34a7d5053503ta79c57d5oafb4d7bb21";
   let units = "metric";
-  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?lon=${response.longitude}&lat=${response.latitude}&key=${keyApi}&units=`;
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?lon=${response.longitude}&lat=${response.latitude}&key=${keyApi}&units=${units}`;
   axios.get(apiUrlForecast).then(displayForecast);
+}
+
+function formatDay(time) {
+  let date = new Date(time * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forcastWeek = response.data.daily;
+  let forecast = document.querySelector("#forecast-week");
+  let forecastHTML = `<div class="row">`;
+  forcastWeek.forEach(function (forecastday, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+            <div class="col">
+              <div class="card text-center mb-3">
+                <div class="card-body day">
+                  <h5 class="card-title" id="day-1">${formatDay(
+                    forecastday.time
+                  )}</h5>
+                  <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastday.condition.icon
+                  }.png" alt="" id="icon-day-1" />
+                  <p class="card-text tem-max">${Math.round(
+                    forecastday.temperature.maximum
+                  )}°</p>
+                  <p class="card-text text-body-secondary tem-min">${Math.round(
+                    forecastday.temperature.minimum
+                  )}°</p>
+                </div>
+              </div>
+            </div>
+`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
 }
 
 function showTemperature(response) {
@@ -71,30 +112,6 @@ function showTemperature(response) {
   farenheitSymbol.classList.remove("bold-symbols");
   getDateTime();
   getForecast(response.data.coordinates);
-}
-
-function displayForecast() {
-  let forecast = document.querySelector("#forecast-week");
-  let days = ["Tue", "Wed", "Thu", "Fri"];
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-            <div class="col">
-              <div class="card text-center mb-3">
-                <div class="card-body day">
-                  <h5 class="card-title" id="day-1">${day}</h5>
-                  <img src="" alt="" id="icon-day-1" />
-                  <p class="card-text tem-max">19°C</p>
-                  <p class="card-text text-body-secondary tem-min">13°C</p>
-                </div>
-              </div>
-            </div>
-`;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
 }
 
 function showCurrentCity(response) {
@@ -146,8 +163,6 @@ function convertToCelsius(event) {
   farenheitSymbol.classList.remove("bold-symbols");
   ctempValue.innerHTML = Math.round(ctemp);
 }
-
-displayForecast();
 
 let celsiusSymbol = document.querySelector("#celsius");
 let farenheitSymbol = document.querySelector("#farenheit");
